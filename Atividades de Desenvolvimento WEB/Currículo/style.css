@@ -1,0 +1,44 @@
+body {
+    background-color: lightgray;
+    font-family: Arial;
+    margin: 30px;
+}
+
+h1 {
+    color: rgb(188, 188, 255);
+}
+
+h2 {
+    color: rgb(188, 188, 255);
+}
+
+h3 {
+    color: gray;
+}
+
+p {
+    font-size: 16px;
+}
+
+ul {
+    list-style-type: square;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: blue;
+    color: white;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+a {
+    color: blue;
+}
