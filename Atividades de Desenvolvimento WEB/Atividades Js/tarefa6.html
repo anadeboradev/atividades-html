@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Tarefa 7 - Calculadora</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .calculadora {
+            background-color: white;
+            width: 400px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #aaa;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background-color: #388E3C;
+        }
+
+        textarea {
+            width: 90%;
+            height: 80px;
+            margin-top: 15px;
+            padding: 10px;
+            resize: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculadora">
+
+        <h1>Calculadora</h1>
+
+        <p>
+            Digite dois números e escolha uma das quatro operações
+            matemáticas básicas: soma, subtração, multiplicação ou divisão.
+        </p>
+
+        <input type="text" id="numero1" placeholder="Digite o primeiro número">
+
+        <input type="text" id="numero2" placeholder="Digite o segundo número">
+
+        <br>
+
+        <button onclick="somar()">Somar</button>
+
+        <button onclick="subtrair()">Subtrair</button>
+
+        <button onclick="multiplicar()">Multiplicar</button>
+
+        <button onclick="dividir()">Dividir</button>
+
+        <br>
+
+        <textarea id="resultado" readonly placeholder="Resultado"></textarea>
+
+    </div>
+
+    <script>
+
+        function pegarNumeros() {
+            let n1 = Number(document.getElementById("numero1").value);
+            let n2 = Number(document.getElementById("numero2").value);
+
+            return [n1, n2];
+        }
+
+        function somar() {
+
+            let numeros = pegarNumeros();
+
+            let n1 = numeros[0];
+            let n2 = numeros[1];
+
+            let resultado = n1 + n2;
+
+            document.getElementById("resultado").value =
+                "Resultado da soma: " + resultado;
+        }
+
+        function subtrair() {
+
+            let numeros = pegarNumeros();
+
+            let n1 = numeros[0];
+            let n2 = numeros[1];
+
+            let resultado = n1 - n2;
+
+            document.getElementById("resultado").value =
+                "Resultado da subtração: " + resultado;
+        }
+
+        function multiplicar() {
+
+            let numeros = pegarNumeros();
+
+            let n1 = numeros[0];
+            let n2 = numeros[1];
+
+            let resultado = n1 * n2;
+
+            document.getElementById("resultado").value =
+                "Resultado da multiplicação: " + resultado;
+        }
+
+        function dividir() {
+
+            let numeros = pegarNumeros();
+
+            let n1 = numeros[0];
+            let n2 = numeros[1];
+
+            if (n2 === 0) {
+                document.getElementById("resultado").value =
+                    "Não é possível dividir por zero!";
+                return;
+            }
+
+            let resultado = n1 / n2;
+
+            document.getElementById("resultado").value =
+                "Resultado da divisão: " + resultado;
+        }
+
+    </script>
+
+</body>
+</html>

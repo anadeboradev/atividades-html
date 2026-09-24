@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Tarefa 8 - Bhaskara</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .bhaskara {
+            background-color: white;
+            width: 450px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #aaa;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .formula {
+            background-color: #eee;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 7px 0;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #388E3C;
+        }
+
+        textarea {
+            width: 90%;
+            height: 120px;
+            margin-top: 20px;
+            padding: 10px;
+            resize: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bhaskara">
+
+        <h1>Calculadora de Bhaskara</h1>
+
+        <p>
+            Digite os valores de <strong>a</strong>, <strong>b</strong>
+            e <strong>c</strong> para calcular as raízes de uma
+            equação do segundo grau.
+        </p>
+
+        <div class="formula">
+            <strong>Δ = b² - 4ac</strong>
+            <br><br>
+            <strong>x = (-b ± √Δ) / 2a</strong>
+        </div>
+
+        <input type="text" id="valorA" placeholder="Digite o valor de A">
+
+        <input type="text" id="valorB" placeholder="Digite o valor de B">
+
+        <input type="text" id="valorC" placeholder="Digite o valor de C">
+
+        <br>
+
+        <button onclick="calcularBhaskara()">
+            Calcular
+        </button>
+
+        <br>
+
+        <textarea id="resultado" readonly
+            placeholder="O resultado aparecerá aqui"></textarea>
+
+    </div>
+
+    <script>
+
+        function calcularBhaskara() {
+
+            // Pegando os valores digitados
+            let a = Number(document.getElementById("valorA").value);
+            let b = Number(document.getElementById("valorB").value);
+            let c = Number(document.getElementById("valorC").value);
+
+            // Verifica se A é zero
+            if (a === 0) {
+
+                document.getElementById("resultado").value =
+                    "O valor de A não pode ser zero.";
+
+                return;
+            }
+
+            // Calculando o delta
+            let delta = (b * b) - (4 * a * c);
+
+            // Verifica se existem raízes reais
+            if (delta < 0) {
+
+                document.getElementById("resultado").value =
+                    "Delta = " + delta +
+                    "\nNão existem raízes reais.";
+
+                return;
+            }
+
+            // Calculando as raízes
+            let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+            // Mostrando o resultado
+            document.getElementById("resultado").value =
+                "Delta = " + delta +
+                "\nX1 = " + x1 +
+                "\nX2 = " + x2;
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ValidaFood</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <div class="logo">
+            🥫 <span>ValidaFood</span>
+        </div>
+
+        <p>Controle a validade dos seus alimentos</p>
+    </header>
+
+
+    <main class="container">
+
+        <!-- PAINEL -->
+        <section class="painel">
+
+            <div class="card">
+                <span class="icone">🟢</span>
+                <div>
+                    <h3>Dentro da validade</h3>
+                    <strong id="totalNormal">0</strong>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="icone">🟡</span>
+                <div>
+                    <h3>Próximos do vencimento</h3>
+                    <strong id="totalProximo">0</strong>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="icone">🔴</span>
+                <div>
+                    <h3>Vencidos</h3>
+                    <strong id="totalVencido">0</strong>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- FORMULÁRIO -->
+        <section class="formulario-container">
+
+            <h2 id="tituloFormulario">Adicionar alimento</h2>
+
+            <form id="formAlimento">
+
+                <input type="hidden" id="indiceEdicao">
+
+                <div class="campo">
+                    <label for="nome">Nome do alimento</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Ex: Leite"
+                        required
+                    >
+                </div>
+
+
+                <div class="linha">
+
+                    <div class="campo">
+                        <label for="quantidade">Quantidade</label>
+
+                        <input
+                            type="number"
+                            id="quantidade"
+                            min="1"
+                            placeholder="Ex: 2"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="campo">
+                        <label for="validade">Data de validade</label>
+
+                        <input
+                            type="date"
+                            id="validade"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="local">Local onde está guardado</label>
+
+                    <select id="local">
+
+                        <option value="Geladeira">
+                            🧊 Geladeira
+                        </option>
+
+                        <option value="Freezer">
+                            ❄️ Freezer
+                        </option>
+
+                        <option value="Despensa">
+                            🏠 Despensa
+                        </option>
+
+                        <option value="Armário">
+                            🗄️ Armário
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="observacao">
+                        Observação
+                    </label>
+
+                    <textarea
+                        id="observacao"
+                        placeholder="Alguma observação sobre o alimento?"
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="botao-principal"
+                    id="botaoSalvar"
+                >
+                    ➕ Adicionar alimento
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- LISTA -->
+        <section class="lista-container">
+
+            <div class="topo-lista">
+
+                <h2>Meus alimentos</h2>
+
+                <input
+                    type="search"
+                    id="pesquisa"
+                    placeholder="🔎 Pesquisar alimento..."
+                >
+
+            </div>
+
+
+            <div id="listaAlimentos">
+
+                <!-- Os alimentos aparecerão aqui pelo JavaScript -->
+
+            </div>
+
+
+            <div
+                id="mensagemVazia"
+                class="mensagem-vazia"
+            >
+
+                🥫
+
+                <h3>
+                    Nenhum alimento cadastrado
+                </h3>
+
+                <p>
+                    Adicione seu primeiro alimento acima.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            ValidaFood © 2026 — Reduzindo o desperdício de alimentos.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
