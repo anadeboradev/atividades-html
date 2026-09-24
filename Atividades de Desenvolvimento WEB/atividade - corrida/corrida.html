@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inscrição para Corrida</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>🏃 Inscrição para Corrida</h1>
+        <p class="descricao">Preencha seus dados para participar da corrida!</p>
+
+        <form>
+
+            <div class="campo">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+            </div>
+
+            <div class="campo">
+                <label for="sobrenome">Sobrenome</label>
+                <input type="text" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome">
+            </div>
+
+            <div class="campo">
+                <label for="idade">Idade</label>
+                <input type="number" id="idade" name="idade" placeholder="Digite sua idade">
+            </div>
+
+            <div class="campo">
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00">
+            </div>
+
+            <div class="campo">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+            </div>
+
+            <div class="campo">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="exemplo@email.com">
+            </div>
+
+            <div class="campo">
+                <p>Gênero</p>
+
+                <div class="opcoes">
+                    <label>
+                        <input type="radio" name="genero" value="masculino">
+                        Masculino
+                    </label>
+
+                    <label>
+                        <input type="radio" name="genero" value="feminino">
+                        Feminino
+                    </label>
+
+                    <label>
+                        <input type="radio" name="genero" value="outro">
+                        Outro
+                    </label>
+                </div>
+            </div>
+
+            <div class="campo">
+                <p>Distância da corrida</p>
+
+                <div class="opcoes">
+                    <label>
+                        <input type="radio" name="distancia" value="5km">
+                        5 km
+                    </label>
+
+                    <label>
+                        <input type="radio" name="distancia" value="10km">
+                        10 km
+                    </label>
+
+                    <label>
+                        <input type="radio" name="distancia" value="15km">
+                        15 km
+                    </label>
+                </div>
+            </div>
+
+            <div class="campo">
+                <p>Itens desejados</p>
+
+                <div class="opcoes">
+                    <label>
+                        <input type="checkbox" name="itens" value="camiseta">
+                        Camiseta
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="itens" value="medalha">
+                        Medalha
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="itens" value="banana">
+                        Banana
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit">Enviar inscrição 🏁</button>
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>
